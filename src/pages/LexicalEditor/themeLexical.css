@@ -1,0 +1,16 @@
+/* ======== Css for theme lexical editor ======== */
+.editor-textUnderline {
+    text-decoration: underline;
+}
+
+.editor-textBold {
+    font-weight: bold;
+}
+
+.editor-textItalic {
+    font-style: italic;
+}
+
+.editor-paragraph {
+  margin: 0 0 1rem 0;
+}
