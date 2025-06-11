@@ -13,23 +13,27 @@ import { FillBlankNode } from "../LexicalEditor/plugins/FIllBlankPlugin";
 
 
 import themingLexical from "../../constants/themingLexical";
+import { useNavigate } from "react-router-dom";
+import ListWord from "../../components/ListWord";
 
 const ImportHTMLPlugin = ({ htmlJSON }) => {
     const [editor] = useLexicalComposerContext();
-    if (!htmlJSON) return null;
     useEffect(() => {
-        if (htmlJSON === null) return;
-        const parsedState = editor.parseEditorState(htmlJSON);
-        console.log(parsedState);
-        editor.setEditorState(parsedState);
+        if (Object.keys(htmlJSON).length === 0) return;
+        setTimeout(() => {
+            const parsedState = editor.parseEditorState(htmlJSON);
+            editor.setEditorState(parsedState);
+        }, 0);
     }, [htmlJSON, editor]);
 
     return null;
 };
 
+const words = ['are', 'in', 'on', 'is', 'play'];
+
 const FillBlank = () => {
     const rawHTML = useSelector((state) => state.editor.rawHTML);
-    console.log(rawHTML);
+    const navigate = useNavigate();
 
     const initialConfig = {
         namespace: 'PreviewEditor',
@@ -42,16 +46,20 @@ const FillBlank = () => {
 
     return (
         <>
-            <LexicalComposer initialConfig={initialConfig}>
-                <ImportHTMLPlugin htmlJSON={rawHTML} />
-                <RichTextPlugin
-                    contentEditable={<ContentEditable className="editor-input" />}
-                    placeholder={<div className="editor-placeholder">Loading content...</div>}
-                    ErrorBoundary={LexicalErrorBoundary}
-                />
-                <HistoryPlugin />
-                <AutoFocusPlugin />
-            </LexicalComposer>
+            <div className="editor-container">
+                <LexicalComposer initialConfig={initialConfig}>
+                    <ImportHTMLPlugin htmlJSON={rawHTML} />
+                    <RichTextPlugin
+                        contentEditable={<ContentEditable className="editor-input" />}
+                        // placeholder={<div className="editor-placeholder">Loading content...</div>}
+                        ErrorBoundary={LexicalErrorBoundary}
+                    />
+                    <HistoryPlugin />
+                    <AutoFocusPlugin />
+                </LexicalComposer>
+            </div>
+            <ListWord words={words} />
+            <button className="button" style={{ marginTop: '10px' }} onClick={() => navigate(-1)} >Return</button>
         </>
     )
 }

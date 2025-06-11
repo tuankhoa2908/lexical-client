@@ -1,0 +1,14 @@
+.word-bank {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+.word-box {
+  padding: 6px 10px;
+  background: #e0e0e0;
+  border-radius: 4px;
+  cursor: grab;
+  user-select: none;
+  color: black;
+}

@@ -21,6 +21,18 @@ const themingLexical = {
         listitemChecked: 'editor-listItemChecked',
         listitemUnchecked: 'editor-listItemUnchecked',
     },
+    table: 'editor-table',
+    tableCell: 'editor-tableCell',
+    tableRow: 'editor-tableRow',
+    align: {
+        left: 'editor-alignLeft',
+        center: 'editor-alignCenter',
+        right: 'editor-alignRight',
+        justify: 'editor-alignJustify',
+    },
+    indent: 'editor-indent',
+    highlight: 'editor-highlight',
+
     hashtag: 'editor-hashtag',
     image: 'editor-image',
     link: 'editor-link',

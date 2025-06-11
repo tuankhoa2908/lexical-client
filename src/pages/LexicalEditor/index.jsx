@@ -87,7 +87,7 @@ const ToolbarPlugin = () => {
                     });
                 }}
             >
-                Blank Box
+                Blank Input Box
             </button>
         </div>
     );
@@ -110,7 +110,7 @@ const LexicalEditor = () => {
                     <div className="editor-content-wrapper">
                         <RichTextPlugin
                             contentEditable={<ContentEditable className="editor-input" />}
-                            placeholder={<div className="editor-placeholder">Type here...</div>}
+                            // placeholder={<div className="editor-placeholder">Type here...</div>}
                             ErrorBoundary={LexicalErrorBoundary}
                         />
                     </div>

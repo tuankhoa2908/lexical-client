@@ -2,7 +2,25 @@ import { DecoratorNode } from "lexical";
 import * as React from "react";
 
 function FillBlankComponent({ nodeKey }) {
-    return <input type="text" className="fill-blank-box" placeholder="..." />;
+    const [value, setValue] = React.useState("");
+
+    return (
+        <input
+            type="text"
+            className="fill-blank-box"
+            value={value}
+            onChange={(e) => setValue(e.target.value)}
+            onDrop={(e) => {
+                e.preventDefault();
+                const droppedWord = e.dataTransfer.getData("text/plain");
+                if (droppedWord) {
+                    setValue(droppedWord);
+                }
+            }}
+            onDragOver={(e) => e.preventDefault()} // Cho phép thả vào input
+            placeholder="..."
+        />
+    );
 }
 
 export class FillBlankNode extends DecoratorNode {

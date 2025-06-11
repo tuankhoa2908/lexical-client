@@ -1,5 +1,4 @@
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext';
-import { $generateHtmlFromNodes } from '@lexical/html';
 import { useDispatch } from 'react-redux';
 import { saveRawHTML } from '../../../redux/editorSlice';
 import { useNavigate } from 'react-router-dom';
