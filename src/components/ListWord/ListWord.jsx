@@ -1,5 +1,5 @@
 import React from "react";
-import './component.css';
+import './listword.css';
 
 const ListWord = ({ words }) => {
     return (

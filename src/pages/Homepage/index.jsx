@@ -6,9 +6,11 @@ const Homepage = () => {
     return (
         <>
             <h1>This is Home Page</h1>
-            <button className='button' onClick={() => navigate('lexical-editor')} style={{ marginBottom: '10px' }}>Lexical Editor preview</button>
+
             <br />
-            <button className='button' onClick={() => navigate('fill-blank')}>Test Fill the Blank</button>
+            <button className='button' onClick={() => navigate('drag-drop-image')} style={{ marginTop: '10px' }}>Drag Drop Image</button>
+            <br />
+            <button className='button' onClick={() => navigate('preview-question')} style={{ marginTop: '10px' }}>PreviewQuestion</button>
         </>
     )
 }

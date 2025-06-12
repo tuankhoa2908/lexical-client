@@ -2,8 +2,9 @@ import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Homepage from './pages/Homepage';
-import LexicalEditor from './pages/LexicalEditor';
-import FillBlank from './pages/FillBlank';
+
+import DragDropImage from './pages/Drag_Drop_Image';
+import PreviewQuestion from './pages/PreviewQuestion/index.jsx';
 
 
 function App() {
@@ -13,8 +14,9 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Homepage />} />
-          <Route path='/lexical-editor' element={<LexicalEditor />} />
-          <Route path='/fill-blank' element={<FillBlank />} />
+
+          <Route path='/drag-drop-image' element={<DragDropImage />} />
+          <Route path='/preview-question' element={<PreviewQuestion />} />
         </Routes>
       </BrowserRouter>
     </>
